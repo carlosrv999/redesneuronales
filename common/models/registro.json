@@ -1,0 +1,78 @@
+{
+  "name": "registro",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "codigo_modular": {
+      "type": "string",
+      "required": true
+    },
+    "codigo_local": {
+      "type": "string",
+      "required": true
+    },
+    "nombre_ce": {
+      "type": "string",
+      "required": true
+    },
+    "area": {
+      "type": "number",
+      "required": true
+    },
+    "riesgo_deslizamiento": {
+      "type": "number",
+      "required": true
+    },
+    "riesgo_inundacion": {
+      "type": "number",
+      "required": true
+    },
+    "mov_masas": {
+      "type": "number",
+      "required": true
+    },
+    "inundacion": {
+      "type": "number",
+      "required": true
+    },
+    "infra_niv_i": {
+      "type": "number",
+      "required": true
+    },
+    "infra_niv_ii": {
+      "type": "number",
+      "required": true
+    },
+    "infra_niv_iii": {
+      "type": "number",
+      "required": true
+    },
+    "categoria": {
+      "type": "number",
+      "required": true
+    },
+    "tipo_1": {
+      "type": "number",
+      "required": true
+    },
+    "tipo_2": {
+      "type": "number",
+      "required": true
+    },
+    "tipo_3": {
+      "type": "number",
+      "required": true
+    },
+    "tipo_4": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
