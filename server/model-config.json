@@ -16,5 +16,9 @@
   "registro": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "peso": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

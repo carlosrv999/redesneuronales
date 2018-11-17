@@ -1,0 +1,22 @@
+{
+  "name": "peso",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "capa1": {
+      "type": "any",
+      "required": true
+    },
+    "capa2": {
+      "type": "any",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
