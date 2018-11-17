@@ -21,9 +21,10 @@ module.exports = function(server) {
 
     Peso.find({}, (err, result) => {
       console.log(result.capa1);
+      let salida = null;
       let capa1 = result[0].capa1;
       let capa2 = result[0].capa2;
-      let salida = redsita(capa1, capa2, entradas);
+      salida = redsita(capa1, capa2, entradas);
       return res.status(200).send(salida);
     })
     // console.log(salida);
