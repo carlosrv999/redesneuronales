@@ -46,5 +46,7 @@ let obtenerSalidas = (capa2, inlets) => {
 
 module.exports = (capa1, capa2, entradas) => {
   let valor = obtenerEntradas2(capa1, capa2, entradas, obtenerSalidas);
+  entradas2 = [];
+  salidas = [];
   return valor;
 }
