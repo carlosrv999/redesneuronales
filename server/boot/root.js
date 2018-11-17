@@ -7,7 +7,7 @@ module.exports = function(server) {
   router.get('/', server.loopback.status());
   var Peso = server.models.Peso;
 
-
+// http://localhost:3000/calcularPesos?area=1&riesgo_deslizamiento=4&riesgo_inundacion=0&mov_masas=2&inundacion=2&infra_niv_i=0&infra_niv_ii=0&infra_niv_iii=1
   router.get('/calcularPesos', async (req, res, next) => {
     let area = req.query.area;
     let riesgo_deslizamiento = req.query.riesgo_deslizamiento;
