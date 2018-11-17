@@ -25,6 +25,7 @@ module.exports = function(server) {
       let capa1 = result[0].capa1;
       let capa2 = result[0].capa2;
       salida = redsita(capa1, capa2, entradas);
+      console.log(salida);
       return res.status(200).send(salida);
     })
     // console.log(salida);
