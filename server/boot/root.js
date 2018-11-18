@@ -9,6 +9,14 @@ module.exports = function(server) {
 
 // http://localhost:3000/calcularPesos?area=1&riesgo_deslizamiento=4&riesgo_inundacion=0&mov_masas=2&inundacion=2&infra_niv_i=0&infra_niv_ii=0&infra_niv_iii=1
   router.get('/calcularPesos', async (req, res, next) => {
+    if(req.query.area === undefined) return res.status(400).send({error: "falta el parametro area"})
+    if(req.query.riesgo_deslizamiento === undefined) return res.status(400).send({error: "falta el parametro riesgo_deslizamiento"})
+    if(req.query.riesgo_inundacion === undefined) return res.status(400).send({error: "falta el parametro riesgo_inundacion"})
+    if(req.query.mov_masas === undefined) return res.status(400).send({error: "falta el parametro mov_masas"})
+    if(req.query.inundacion === undefined) return res.status(400).send({error: "falta el parametro inundacion"})
+    if(req.query.infra_niv_i === undefined) return res.status(400).send({error: "falta el parametro infra_niv_i"})
+    if(req.query.infra_niv_ii === undefined) return res.status(400).send({error: "falta el parametro infra_niv_ii"})
+    if(req.query.infra_niv_iii === undefined) return res.status(400).send({error: "falta el parametro infra_niv_iii"})
     let area = req.query.area;
     let riesgo_deslizamiento = req.query.riesgo_deslizamiento;
     let riesgo_inundacion = req.query.riesgo_inundacion;
@@ -20,12 +28,10 @@ module.exports = function(server) {
     const entradas = [area, riesgo_deslizamiento, riesgo_inundacion, mov_masas, inundacion, infra_niv_i, infra_niv_ii, infra_niv_iii];
 
     Peso.find({}, (err, result) => {
-      console.log(result.capa1);
       let salida = null;
       let capa1 = result[0].capa1;
       let capa2 = result[0].capa2;
       salida = redsita(capa1, capa2, entradas);
-      console.log(salida);
       return res.status(200).send(salida);
     })
     // console.log(salida);
