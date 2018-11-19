@@ -22,8 +22,8 @@ let obtenerEntradas2 = (capa1, capa2, entradas, callback) => {
   }
   // console.log(`las entradas a la capa oculta al final quedan en `);
   // console.log(entradas2);
-  let mierda = callback(capa2, entradas2);
-  return mierda;
+  let salidaCallback = callback(capa2, entradas2);
+  return salidaCallback;
 }
 
 let obtenerSalidas = (capa2, inlets) => {
