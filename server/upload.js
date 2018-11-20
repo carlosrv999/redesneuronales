@@ -22,18 +22,18 @@ module.exports = function upload(req, res) {
         if(hoja[b]){
           if(hoja[b][a]){
             if(typeof hoja[b][a] != 'number') isCorrect = false;
-          } else return res.status(500).send({error: "El archivo es incorrecto"})
-        } else return res.status(500).send({error: "El archivo es incorrecto"})
+          } else {isCorrect = false; break;}
+        } else {isCorrect = false; break;}
       }
     }
 
     if(isCorrect) {
       fs.createReadStream(file.path).pipe(fs.createWriteStream(`server/temp/archivo${new Date().getTime()}.xlsx`));
-    } else return res.status(500).send({error: "El archivo es incorrecto"})
+    }
 
   });
   form.on('end', () => {
-    res.status(200).send({correct: isCorrect});
+    return res.status(200).send({correct: isCorrect});
   });
   form.parse(req);
 };
