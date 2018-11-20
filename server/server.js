@@ -9,6 +9,8 @@ app.start = function() {
   // start the web server
   return app.listen(function() {
     app.emit('started');
+    // http://200.60.68.125/public/formato_pesos.xlsx
+    app.use('/public', loopback.static('public'));
     var baseUrl = app.get('url').replace(/\/$/, '');
     console.log('Web server listening at: %s', baseUrl);
     if (app.get('loopback-component-explorer')) {
