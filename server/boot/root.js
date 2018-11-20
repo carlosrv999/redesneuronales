@@ -3,6 +3,7 @@
 const upload = require('../upload');
 const RedNeuronal = require("../redneuronal");
 const fs = require('fs');
+const path = require("path");
 const xlsx = require('node-xlsx').default;
 
 module.exports = function (server) {
@@ -45,12 +46,12 @@ module.exports = function (server) {
 
   router.post('/confirmar', (req, res) => {
     let name;
-    fs.readdirSync('server/temp')
+    fs.readdirSync(path.resolve(__dirname, "../temp"))
       .forEach(file => {
         console.log(file);
         name = file;
       });
-    const workSheetsFromBuffer = xlsx.parse(`server/temp/${name}`);
+    const workSheetsFromBuffer = xlsx.parse(path.resolve(__dirname, `../temp/${name}`));
     let hoja = workSheetsFromBuffer[0].data;
     let capa1 = [];
     let capa2 = [];
